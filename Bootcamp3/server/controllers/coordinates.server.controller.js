@@ -28,8 +28,8 @@ module.exports = function(req, res, next) {
           res.status(400).send(error);
         }
         //JSON.parse to get contents. Remember to look at the response's JSON format in open cage data
-        var data = JSON.parse(body);
-        req.results = data.results[0].geometry;
+        var listing = JSON.parse(body);
+        req.results = listing.results[0].geometry;
         /*Save the coordinates in req.results -> 
           this information will be accessed by listings.server.model.js 
           to add the coordinates to the listing request to be saved to the database.
